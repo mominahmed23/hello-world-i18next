@@ -9,7 +9,7 @@ const Home = () => {
   const { t } = useTranslation("common");
   return (
     <div className={styles.container}>
-      <Link href="/" locale={router.locale === "en" ? "de" : "en"}>
+      <Link href="/" locale={router.locale === "en" ? "ar" : "en"}>
         <button>{t("change-locale")}</button>
       </Link>
       <h1>{t("title")}</h1>
@@ -18,7 +18,7 @@ const Home = () => {
 };
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "footer"])),
+    ...(await serverSideTranslations(locale, ["common"])),
   },
 });
 export default Home;
